@@ -1,0 +1,323 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+class Calculator extends JFrame{
+	private JButton[] buttonArray;
+	private JTextField textField,upperTextField;
+	private double total=0;
+	private boolean chekIfNum=false;
+	private String function="",subFunction="";
+	Calculator(){
+		setSize(500,600);
+		setTitle("Notepad");
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
+		setLocationRelativeTo(null);
+		setLayout(new BorderLayout());
+		
+		textField=new JTextField(20);
+		textField.setFont(new Font("",0,45));
+		textField.setHorizontalAlignment(textField.RIGHT);
+		//add("North",textField);
+		
+		upperTextField=new JTextField(8);
+		upperTextField.setFont(new Font("",0,25));
+		upperTextField.setHorizontalAlignment(upperTextField.RIGHT);
+		//add("North",upperTextField);
+		
+		JPanel textPanel=new JPanel(new BorderLayout());
+		textPanel.add("North",upperTextField);
+		textPanel.add("Center",textField);
+		add("North",textPanel);
+		
+		JPanel buttonPanel=new JPanel(new GridLayout(4,4));
+		buttonArray=new JButton[16];
+		String[] buttonName={"7","8","9","/","4","5","6","*","1","2","3","+",".","0","-","="};
+		for(int i=0;i<16;i++){
+			buttonArray[i]=new JButton(buttonName[i]);
+			buttonArray[i].setFont(new Font("",1,40));
+			buttonPanel.add(buttonArray[i]);
+		}
+		
+		buttonArray[0].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				chekIfNum=true;
+				addValue(buttonName[0]);
+				upperTextField.setText(upperTextField.getText()+buttonName[0]);
+				if(function.equals("=")){
+					textField.setText(buttonName[0]);
+					function="";
+					upperTextField.setText("");
+					upperTextField.setText(upperTextField.getText()+buttonName[0]);
+				}
+				if(subFunction.equals("")){}
+				else{textField.setText(buttonName[0]);subFunction="";}
+			}
+		});
+		buttonArray[1].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				chekIfNum=true;
+				addValue(buttonName[1]);
+				upperTextField.setText(upperTextField.getText()+buttonName[1]);
+				if(function.equals("=")){
+					textField.setText(buttonName[1]);
+					function="";
+					upperTextField.setText("");
+					upperTextField.setText(upperTextField.getText()+buttonName[1]);
+				}
+				if(subFunction.equals("")){}
+				else{textField.setText(buttonName[1]);subFunction="";}
+			}
+		});
+		buttonArray[2].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				chekIfNum=true;
+				addValue(buttonName[2]);
+				upperTextField.setText(upperTextField.getText()+buttonName[2]);
+				if(function.equals("=")){
+					textField.setText(buttonName[2]);
+					function="";
+					upperTextField.setText("");
+					upperTextField.setText(upperTextField.getText()+buttonName[2]);
+				}
+				if(subFunction.equals("")){}
+				else{textField.setText(buttonName[2]);subFunction="";}
+			}
+		});
+		buttonArray[4].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				chekIfNum=true;
+				addValue(buttonName[4]);
+				upperTextField.setText(upperTextField.getText()+buttonName[4]);
+				if(function.equals("=")){
+					textField.setText(buttonName[4]);
+					function="";
+					upperTextField.setText("");
+					upperTextField.setText(upperTextField.getText()+buttonName[4]);
+				}
+				if(subFunction.equals("")){}
+				else{textField.setText(buttonName[4]);subFunction="";}
+			}
+		});
+		buttonArray[5].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				chekIfNum=true;
+				addValue(buttonName[5]);
+				upperTextField.setText(upperTextField.getText()+buttonName[5]);
+				if(function.equals("=")){
+					textField.setText(buttonName[5]);
+					function="";
+					upperTextField.setText("");
+					upperTextField.setText(upperTextField.getText()+buttonName[5]);
+				}
+				if(subFunction.equals("")){}
+				else{textField.setText(buttonName[5]);subFunction="";}
+			}
+		});
+		buttonArray[6].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				chekIfNum=true;
+				addValue(buttonName[6]);
+				upperTextField.setText(upperTextField.getText()+buttonName[6]);
+				if(function.equals("=")){
+					textField.setText(buttonName[6]);
+					function="";
+					upperTextField.setText("");
+					upperTextField.setText(upperTextField.getText()+buttonName[6]);
+				}
+				if(subFunction.equals("")){}
+				else{textField.setText(buttonName[6]);subFunction="";}
+			}
+		});
+		buttonArray[8].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				chekIfNum=true;
+				addValue(buttonName[8]);
+				upperTextField.setText(upperTextField.getText()+buttonName[8]);
+				if(function.equals("=")){textField.setText(buttonName[8]);function="";}
+				if(subFunction.equals("")){}
+				else{textField.setText(buttonName[8]);subFunction="";}
+			}
+		});
+		buttonArray[9].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				chekIfNum=true;
+				addValue(buttonName[9]);
+				upperTextField.setText(upperTextField.getText()+buttonName[9]);
+				if(function.equals("=")){
+					textField.setText(buttonName[9]);
+					function="";
+					upperTextField.setText("");
+					upperTextField.setText(upperTextField.getText()+buttonName[9]);
+				}
+				if(subFunction.equals("")){}
+				else{textField.setText(buttonName[9]);subFunction="";}
+			}
+		});
+		buttonArray[10].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				chekIfNum=true;
+				addValue(buttonName[10]);
+				upperTextField.setText(upperTextField.getText()+buttonName[10]);
+				if(function.equals("=")){
+					textField.setText(buttonName[10]);
+					function="";
+					upperTextField.setText("");
+					upperTextField.setText(upperTextField.getText()+buttonName[10]);}
+				if(subFunction.equals("")){}
+				else{textField.setText(buttonName[10]);subFunction="";}
+			}
+		});
+		buttonArray[13].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				chekIfNum=true;
+				addValue(buttonName[13]);		
+				upperTextField.setText(upperTextField.getText()+buttonName[13]);
+				if(function.equals("=")){
+					textField.setText(buttonName[13]);
+					function="";
+					upperTextField.setText("");
+					upperTextField.setText(upperTextField.getText()+buttonName[13]);
+				}
+				if(subFunction.equals("")){}
+				else{textField.setText(buttonName[13]);subFunction="";}
+			}
+		});
+		
+		buttonArray[12].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				addValue(buttonName[12]);
+				upperTextField.setText(upperTextField.getText()+buttonName[12]);
+			}
+		});
+		buttonArray[3].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				double num = Double.valueOf(textField.getText());
+				if(chekIfNum){
+					switch (function){
+						case "-" : minus(num);break;
+						case "" : total=num;break;
+						case "+" : plus(num);break;
+						case "/" : divide(num);break;
+					}
+				}
+				function="/";
+				subFunction="/";
+				upperTextField.setText(upperTextField.getText()+function);
+				chekIfNum=false;
+				buttonName[3]="";
+				addValue(buttonName[3]);
+				
+			}
+		});
+		buttonArray[7].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				double num = Double.valueOf(textField.getText());
+				if(chekIfNum){
+					switch (function){
+						case "-" : minus(num);break;
+						case "" : total=num;break;
+						case "+" : plus(num);break;
+						case "/" : divide(num);break;
+						case "*" : multi(num);break;
+					}
+				}
+				function="*";
+				subFunction="*";
+				upperTextField.setText(upperTextField.getText()+function);
+				chekIfNum=false;
+				buttonName[7]="";
+				addValue(buttonName[7]);
+				
+			}
+		});
+		buttonArray[11].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				double num = Double.valueOf(textField.getText());
+				if(chekIfNum){
+					switch (function){
+						case "-" : minus(num);break;
+						case "" : total=num;break;
+						case "+" : plus(num);break;
+						case "/" : divide(num);break;
+						case "*" : multi(num);break;
+					}
+				}
+				function="+";
+				subFunction="+";
+				upperTextField.setText(upperTextField.getText()+function);
+				chekIfNum=false;
+				buttonName[11]="";
+				addValue(buttonName[11]);
+				
+			}
+		});
+		
+		buttonArray[14].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				double num = Double.valueOf(textField.getText());
+				if(chekIfNum){
+					switch (function){
+						case "+" : plus(num);break;
+						case "" : total=num;break;
+						case "-" : minus(num);break;
+						case "/" : divide(num);break;
+						case "*" : multi(num);break;
+					}
+				}
+				function="-";
+				subFunction="-";
+				upperTextField.setText(upperTextField.getText()+function);
+				chekIfNum=false;
+				buttonName[14]="";
+				addValue(buttonName[14]);
+				
+			}
+		});
+		buttonArray[15].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				double num = Double.valueOf(textField.getText());
+				
+				switch (function){
+					case "+" : plus(num);break;
+					case "-" : minus(num);break;
+					case "/" : divide(num);break;
+					case "*" : multi(num);break;
+				}
+				buttonName[15]="";
+				textField.setText("");
+				function="=";
+				subFunction="=";
+				addValue(buttonName[15]);
+				textField.setText(""+total);
+				upperTextField.setText(function+textField.getText());
+				
+			}
+		});
+		
+		add("Center",buttonPanel);
+		
+		setVisible(true);
+	}
+	public void addValue(String value){
+		String newValue=textField.getText()+value;
+		textField.setText(newValue);
+	}
+	public void plus(double num){
+		total+=num;
+	}
+	public void minus(double num){
+		total-=num;
+	}
+	public void divide(double num){
+		total/=num;
+	}
+	public void multi(double num){
+		total*=num;
+	}
+}
+class Demo{ 
+	public static void main(String args[]){   
+		new Calculator();
+	} 
+}
